@@ -12,8 +12,8 @@ app  = Flask(__name__)
 def home():
 	return render_template('index.html',title = 'LNMIIT_LBapp | Home')
 
-@app.route('/prediction',methods = ['GET','POST'])
-def prediction():
+@app.route('/myModel',methods = ['GET','POST'])
+def myModel():
 	_date = request.form.get('date')
 	_time = request.form.get('time')
 	_maxtemp = str(request.form.get('maxtemp'))
@@ -35,8 +35,9 @@ def prediction():
 	result = loaded_model.predict(test_set)
 	var = day_dict[day]
 	value_result = getPredictiveValue(var,time_value,result)
+	result_value = float(value_result/3000)
 
-	return str(value_result)
+	return render_template('model.html',title = 'LNMIIT_LBapp | Prediction' ,prediction = result_value)
 
 if __name__ == '__main__':
 	app.run(debug=True)

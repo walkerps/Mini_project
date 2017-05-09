@@ -53,19 +53,6 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
@@ -77,7 +64,7 @@
                 <h1 id="homeHeading">Your only source for Predicting Energy Consumption in Smart Campus</h1>
                 <hr>
                 <p>LNMIIT PEC application helps you predict energy consumption in a smart campus based on our desiged algorithms</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out Your Predicted Readings</a>
             </div>
         </div>
     </header>
@@ -86,149 +73,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
+                    <h2 class="section-heading">Your Prediction value of Energy Consumption</h2>
                     <hr class="light">
-                    <p class="text-faded">LNMIIT PEC has everything you need to predict your energy consumption everyday! All of the algorithms deployed in LNMIIT PEC are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    <p class="text-faded">LNMIIT PEC's Algorithm has predicted that your your energy consumption Meter Readings for the particuar Inputs are !</p>
+                    <p class = "text-dark">{{ prediction }}</p>
+                    <hr class = "light">
+                    <a href='http://127.0.0.1:5000/#services' class="page-scroll btn btn-default btn-xl sr-button">Predict Again!</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Fill out the entries to get your result</h2>
-                    <hr class="primary">
-                    <br>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div col-lg-3 col-md-6>
-                <!-- HTML Form (wrapped in a .bootstrap-iso div) -->
-<div class="bootstrap-iso">
- <div class="container-fluid">
-  <div class="row">
-   <div class="col-md-6 col-sm-10 col-xs-12">
-    <form name = 'data_form' action = '/myModel' method="post">
-    <div class = "col-md-3">
-     <div id = "Date" class="form-group ">
-      <label class="control-label " for="date">
-       Date
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
-       <div id = "cal" class="input-group-addon">
-        <i  class="fa fa-calendar">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class = "col-md-3">
-            <div id = "Time" class="form-group ">
-      <label class="control-label " for="text">
-       Time
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="time" name="time" placeholder="Time" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-clock-o">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class="col-md-3">
-         <div id = "Humidity" class="form-group ">
-      <label class="control-label " for="text">
-       rain
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="rain" name="rain" placeholder="Humidity" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-eyedropper">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class = "col-md-3">
-         <div id="Temperature" class="form-group ">
-      <label class="control-label " for="text">
-        Max Temperature
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="maxtemp" name="maxtemp" placeholder="Temperature" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-fire-extinguisher">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class = "col-md-3">
-         <div id="minTemperature" class="form-group ">
-      <label class="control-label " for="text">
-        Min Temperature
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="mintemp" name="mintemp" placeholder="Temperature" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-fire-extinguisher">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class = "col-md-3">
-         <div id="Gmin" class="form-group ">
-      <label class="control-label " for="text">
-       G-Min
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="gmin" name="gmin" placeholder="Gmin" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-fire-extinguisher">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div class = "col-md-3">
-         <div id="Soil" class="form-group ">
-      <label class="control-label " for="text">
-       Soil Temperature
-      </label>
-      <div class="input-group">
-       <input class="form-control" id="soil" name="soil" placeholder="Soil Temp" type="text"/>
-       <div class="input-group-addon">
-        <i class="fa fa-fire-extinguisher">
-        </i>
-       </div>
-      </div>
-     </div>
-     </div>
-     <div id = "button" class = "form-group">
-         <div>
-             <button class="btn btn-custom btn-lg outline" name="submit" type="submit">
-        Submit
-       </button>
-         </div>
-     </div>
-    </form>
-   </div>
-  </div>
- </div>
-</div>                       
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contact">
         <div class="container">
             <div class="row">
@@ -267,37 +121,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
-<script>
-    $(document).ready(function(){
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
-        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-        date_input.datepicker({
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-    })
-</script>
-</div>
-<div class="modal hide" id="myModal">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">x</button>
-    <h3>Login to MyWebsite.com</h3>
-  </div>
-  <div class="modal-body">
-    <form method="post" action='/login/' name="login_form">
-      <p><input type="text" class="span3" name="eid" id="email" placeholder="Email"></p>
-      <p><input type="password" class="span3" name="passwd" placeholder="Password"></p>
-      <p><button type="submit" class="btn btn-primary">Sign in</button>
-        <a href="#">Forgot Password?</a>
-      </p>
-    </form>
-  </div>
-  <div class="modal-footer">
-    New To MyWebsite.com?
-    <a href="#" class="btn btn-primary">Register</a>
-  </div>
 </div>
 
 
