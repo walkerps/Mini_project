@@ -7,7 +7,6 @@ from predictvalue import getPredictiveValue
 
 app  = Flask(__name__)
 
-@app.route('/')
 @app.route('/home/',methods = ['GET','POST'])
 def home():
 	return render_template('index.html',title = 'LNMIIT_LBapp | Home')
