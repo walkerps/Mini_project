@@ -1,6 +1,6 @@
 import os
 def getPredictiveValue(var,bin,sum) :
-	path = '/home/walker/Desktop/Mini_project/data/'
+	path = 'Mini_project/data/'
 	if(var == 0) :
 		day = "Monday"
 	if(var == 1) :
@@ -35,5 +35,3 @@ def getPredictiveValue(var,bin,sum) :
 			ret = EXPECTED_VALUE
 		SUM += EXPECTED_VALUE
 	return ret * (1.0 * sum / SUM)
-
-print getPredictiveValue(5, 35, 10000)
