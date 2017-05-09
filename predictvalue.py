@@ -1,6 +1,7 @@
 import os
 def getPredictiveValue(var,bin,sum) :
-	path = 'Mini_project/data/'
+	sub_dir = os.getcwd()
+	os.listdir(sub_dir)
 	if(var == 0) :
 		day = "Monday"
 	if(var == 1) :
@@ -15,8 +16,7 @@ def getPredictiveValue(var,bin,sum) :
 		day = "Saturday"
 	if(var == 6) :
 		day = "Sunday"
-	path = path + day
-	path = path + '.txt'
+	path = os.path.join(sub_dir,'data',day+".txt")
 	content = []
 	with open(path) as f:
 		content = f.readlines()

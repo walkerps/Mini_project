@@ -78,7 +78,7 @@
                     <p class="text-faded">LNMIIT PEC's Algorithm has predicted that your your energy consumption Meter Readings for the particuar Inputs are !</p>
                     <p class = "text-dark">{{ prediction }}</p>
                     <hr class = "light">
-                    <a href='http://127.0.0.1:5000/#services' class="page-scroll btn btn-default btn-xl sr-button">Predict Again!</a>
+                    <a href = {{ url_for('home')}} class="page-scroll btn btn-default btn-xl sr-button">Predict Again!</a>
                 </div>
             </div>
         </div>
